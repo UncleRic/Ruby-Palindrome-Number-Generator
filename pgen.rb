@@ -22,19 +22,20 @@ def isPalindrome(num)
   word = num.to_s
   x = 0
   y = word.length-1
-  
+  z = 0
   middleIndex = word.length/2
   matched = false
   
   until (x == middleIndex) do
-      leftChar = word[x]
-      rightChar = word[y]
       matched = (word[x] == word[y])
+      if matched
+          z += 1
+      end
       x = x + 1
       y = y - 1
   end
   @palindrome = word
-  return matched
+  return z == middleIndex #...add left <-> right chars must match.
 end
  
 # -------------------------------------------------  
